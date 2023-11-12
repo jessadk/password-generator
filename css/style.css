@@ -103,14 +103,14 @@ button:hover,
 .btn-group {
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
-    margin: 7px 0 20px 0;
+    justify-content: space-between;
+    margin: 10px 0 20px 0;
 }
 
 .length-btn {
     display: inline-block;
-    height: 30px;
-    width: 30px;
+    min-height: 40px;
+    min-width: 40px;
     border-radius: 50px;
     background-color: var(--light-blue);
     color: var(--white);
@@ -129,7 +129,7 @@ button:hover,
     background-color: inherit;
     color: var(--green);
     font-size: 12px;
-    margin-top: 5px;
+    margin-top: 10px;
     font-weight: 300;
 }
 
@@ -210,6 +210,11 @@ button:hover,
 
     h1 {
         font-size: 35px;
+    }
+
+    .btn-group {
+        justify-content: initial;
+        gap: 10px;
     }
 
     #generate-btn {
