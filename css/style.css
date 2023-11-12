@@ -233,6 +233,10 @@ button:hover,
 }
 
 @media (max-width: 350px) {
+    body{
+        background-color: var(--dark-blue);
+    }
+
     h1 {
         margin-bottom: 15px;
     }
