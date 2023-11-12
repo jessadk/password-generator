@@ -228,7 +228,7 @@ button:hover,
 
 @media (max-width: 525px) {
     main {
-        padding: 75px 35px;
+        padding: 100px 25px;
     }
 }
 
@@ -236,17 +236,16 @@ button:hover,
     body{
         background-color: var(--dark-blue);
     }
-
 }
 
 @media (max-width: 350px) {
     h1 {
         margin-bottom: 15px;
     }
+
     main {
         width: 100%;
         border-radius: initial;
-        padding: 75px 25px;
     }
 }
 
