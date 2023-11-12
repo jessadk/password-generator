@@ -1,0 +1,233 @@
+:root {
+    --dark-blue: #1F2937;
+    --medium-blue: #273549;
+    --light-blue: #2F3E53;
+    --white: #fff;
+    --green: #4ADF86;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #1c1c1c;
+    font: 300 20px/1.4 'Inter', sans-serif;
+}
+
+main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+    border-radius: 15px;
+    padding: 100px 50px;
+    background-color: var(--dark-blue);
+    color: var(--white);
+}
+
+main.light-mode {
+    background-color: #eee;
+    color: var(--dark-blue);
+    font-weight: 400;
+}
+
+main.light-mode p span.green,
+main.light-mode #reset-btn {
+    color: var(--dark-blue);
+    font-weight: 500;
+}
+
+main.light-mode .password-group{
+    border-top-color: #ccc;
+}
+
+main.light-mode h1 {
+    color: var(--medium-blue);
+}
+
+h1 {
+    margin-bottom: 10px;
+    font: 40px/1 'Karla', sans-serif;
+    color: var(--white);
+    letter-spacing: -.75px;
+}
+
+.green {
+    color: var(--green);
+}
+
+.label {
+    font-size: 12px;
+    color: inherit;
+}
+
+button {
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+#theme-toggle {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    padding: 7px;
+    border-radius: 50%;
+    background-color: var(--green);
+}
+
+main.light-mode #theme-toggle {
+    background-color: var(--light-blue);
+}
+
+#generate-btn {
+    border-radius: 6px;
+    padding: 9px 15px;
+    background-color: var(--green);
+    color: var(--white);
+}
+
+#reset-btn {
+    display: block;
+    background-color: inherit;
+    color: var(--green);
+    font-size: 12px;
+    margin-top: 5px;
+    font-weight: 300;
+}
+
+.length-btn {
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    border-radius: 50px;
+    background-color: var(--light-blue);
+    color: var(--white);
+    font-weight: 300;
+}
+
+.checked {
+    background-color: var(--green);
+}
+
+
+.btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin: 7px 0 20px 0;
+}
+
+button:hover,
+.generated-passwords:hover {
+    cursor: pointer;
+}
+
+.password-group {
+    display: flex;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--light-blue);
+}
+
+.password {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 9px 15px;
+    border-radius: 6px;
+    background-color: var(--medium-blue);
+    width: 100%;
+    font-size: 16px;
+    color: var(--green);
+    white-space: nowrap;
+}
+
+.generated-passwords {
+    
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    background-color: var(--medium-blue);
+    width: 100%;
+}
+
+.copy-btn {
+    position: relative;
+    height: 100%;
+    padding: 0px 5px;
+    background-color: var(--light-blue);
+    border-radius: 6px;
+}
+
+.copy-btn img {
+    height: 42px;
+    width: 42px;
+}
+
+.copy-btn:hover:before{
+    display: block;
+    position: absolute;
+    content: "Copy";
+    width: 85px;
+    font-size: 12px;
+    background-color: var(--light-blue);
+    color: var(--white);
+    padding: 9px 15px;
+    border-radius: 6px;
+    bottom: 120%;
+    left: 0;
+    z-index: 9999;
+}
+
+.copied:active:before,
+.copied:hover:before {
+    content: "Copied";
+}
+
+.generated-passwords:first-child {
+    margin-right: 20px;
+}
+
+@media (max-width:565px) {
+    body {
+        font-size: 18px;
+    }
+
+    main {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 35px;
+    }
+
+    #generate-btn {
+        width: 100%;
+    }
+    .password-group {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 525px) {
+    main {
+        padding: 75px 35px;
+    }
+}
+
+@media (max-width: 350px) {
+    h1 {
+        margin-bottom: 15px;
+    }
+    main {
+        width: 100%;
+        border-radius: initial;
+        padding: 75px 25px;
+    }
+}
+
+

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=Karla:wght@800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main>
+        <button id="theme-toggle">
+            <img src="assets/light-icon.svg" alt="dark and light mode theme icon" id="theme-icon">
+        </button>
+        <section class="title-container">
+            <h1>Generate a <br><span class="green">random password</span></h1>
+            <p>Never use an insecure password again.</p>
+        </section>
+        <section class="password-container">
+            <div class="password-length">
+                <p class="label">Choose password length <span class="green">(optional)</span></p>
+
+                <div class="btn-group">
+                    <button class="length-btn" data-value="8">8</button>
+                    <button class="length-btn" data-value="9">9</button>
+                    <button class="length-btn" data-value="10">10</button>
+                    <button class="length-btn" data-value="11">11</button>
+                    <button class="length-btn" data-value="12">12</button>
+                    <button class="length-btn" data-value="13">13</button>
+                    <button class="length-btn" data-value="14">14</button>
+                    <button class="length-btn checked" data-value="15">15</button>
+                </div>
+            </div>
+            <button id="generate-btn">Generate passwords</button>
+            <button id="reset-btn">Reset password length</button>
+            <section class="password-group">
+                <div class="generated-passwords">
+                    <div class="password" id="password-one"></div>
+                    <button id="copy-btn-one" class="copy-btn">
+                        <img  src="assets/copy-icon.svg" alt="copy to clipboard icon">
+                    </button>
+                </div>
+               <div class="generated-passwords">
+                <div class="password" id="password-two"></div>
+                 <button id="copy-btn-two" class="copy-btn">
+                    <img src="assets/copy-icon.svg" alt="copy to clipboard icon"> </button>  
+               </div>
+            </section>
+        </section>
+    </main>
+    <script src="index.js"></script>
+</body>
+</html>
