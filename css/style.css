@@ -6,6 +6,9 @@
     --green: #4ADF86;
 }
 
+
+/* Base Styles */
+
 body {
     display: flex;
     justify-content: center;
@@ -13,6 +16,13 @@ body {
     min-height: 100vh;
     background-color: #1c1c1c;
     font: 300 20px/1.4 'Inter', sans-serif;
+}
+
+h1 {
+    margin-bottom: 10px;
+    font: 40px/1 'Karla', sans-serif;
+    color: var(--white);
+    letter-spacing: -.75px;
 }
 
 main {
@@ -26,6 +36,8 @@ main {
     background-color: var(--dark-blue);
     color: var(--white);
 }
+
+/* Theme Mode Styles */
 
 main.light-mode {
     background-color: #eee;
@@ -47,12 +59,20 @@ main.light-mode h1 {
     color: var(--medium-blue);
 }
 
-h1 {
-    margin-bottom: 10px;
-    font: 40px/1 'Karla', sans-serif;
-    color: var(--white);
-    letter-spacing: -.75px;
+#theme-toggle {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    padding: 7px;
+    border-radius: 50%;
+    background-color: var(--green);
 }
+
+main.light-mode #theme-toggle {
+    background-color: var(--light-blue);
+}
+
+/* Utilities */
 
 .green {
     color: var(--green);
@@ -69,17 +89,32 @@ button {
     font-weight: 500;
 }
 
-#theme-toggle {
-    position: absolute;
-    top: 25px;
-    right: 25px;
-    padding: 7px;
-    border-radius: 50%;
-    background-color: var(--green);
+button:hover,
+.output-container:hover {
+    cursor: pointer;
 }
 
-main.light-mode #theme-toggle {
+.checked {
+    background-color: var(--green)!important;
+}
+
+/* Layout */
+
+.btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin: 7px 0 20px 0;
+}
+
+.length-btn {
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    border-radius: 50px;
     background-color: var(--light-blue);
+    color: var(--white);
+    font-weight: 300;
 }
 
 #generate-btn {
@@ -98,38 +133,23 @@ main.light-mode #theme-toggle {
     font-weight: 300;
 }
 
-.length-btn {
-    display: inline-block;
-    height: 30px;
-    width: 30px;
-    border-radius: 50px;
-    background-color: var(--light-blue);
-    color: var(--white);
-    font-weight: 300;
-}
-
-.checked {
-    background-color: var(--green);
-}
-
-
-.btn-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    margin: 7px 0 20px 0;
-}
-
-button:hover,
-.generated-passwords:hover {
-    cursor: pointer;
-}
-
 .password-group {
     display: flex;
     margin-top: 20px;
     padding-top: 20px;
     border-top: 1px solid var(--light-blue);
+}
+
+.output-container {
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    background-color: var(--medium-blue);
+    width: 100%;
+}
+
+.output-container:first-child {
+    margin-right: 20px;
 }
 
 .password {
@@ -143,15 +163,6 @@ button:hover,
     font-size: 16px;
     color: var(--green);
     white-space: nowrap;
-}
-
-.generated-passwords {
-    
-    display: flex;
-    align-items: center;
-    border-radius: 6px;
-    background-color: var(--medium-blue);
-    width: 100%;
 }
 
 .copy-btn {
@@ -187,9 +198,6 @@ button:hover,
     content: "Copied";
 }
 
-.generated-passwords:first-child {
-    margin-right: 20px;
-}
 
 @media (max-width:565px) {
     body {
