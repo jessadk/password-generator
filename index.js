@@ -15,7 +15,8 @@ let lengthValue = 15;
 
 
 function resetValues(value = 15){
-    // Loop through length buttons and toggle "checked" class based on button data-value and value passed
+    /* Loop through length buttons and toggle "checked" class based on
+    button data-value and value passed */
     for (let i = 0; i < lengthBtn.length; i++) {
             lengthBtn[i].classList.toggle("checked", parseInt(lengthBtn[i].dataset.value) === value);
     }
@@ -26,14 +27,16 @@ function resetValues(value = 15){
     copyBtnTwo.classList.remove('copied');
 }
 
-// Add event click to each button. When clicked, pass button data-value to resetValues function to toggle clicked button styles, update length value and reset password container values
+/* Add event click to each button. When clicked, pass button data-value
+to resetValues function to toggle clicked button styles, update length value and reset password container values */
 for(let i = 0; i < lengthBtn.length; i++){
     lengthBtn[i].addEventListener('click', ()=>{
         resetValues(parseInt(lengthBtn[i].dataset.value));
     });
 }
 
-// Function uses random index on characters array to generate and return password that is (default) 15 characters long
+/* Function uses random index on characters array to generate and return
+password that is (default) 15 characters long */
 function generatePassword(value = 15) {
     let randomIndex = "";
     let password = "";
